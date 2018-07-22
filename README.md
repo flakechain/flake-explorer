@@ -1,4 +1,23 @@
-# Onion Monero Blockchain Explorer
+# Forks Friendly FlakeChain Blockchain Explorer
+### with Flask App for Fast Template Design Cycle
+
+Currently Monero Ecosystem is not Forks Friendly. I might to change it being
+user oriented and firstly user are developer. My improvement to original @moneroexamples/onion-monero-blockchain-explorer is to add simple Flask server w/o need to rebuild whole app any time you want to change design.
+
+## Found Template Variables (W.I.P)
+
+- server_timestamp (datetime)
+- refresh (bool)
+- mempool_info (partial)
+- is_page_zero (bool)
+- blocks (list)
+    - height (int)
+    - age (str)
+    - time_delta (str)
+page_no (int)
+total_page_no (int)
+
+## Onion Explorer Readme
 
 Currently available Monero blockchain explorers have several limitations which are of
 special importance to privacy-oriented users:

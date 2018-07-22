@@ -12,11 +12,11 @@
         {{/txs}}
 
         {{#has_error}}
-            <h4 style="color:red">Attempt failed</h4>
+            <h4 >Attempt failed</h4>
             <h4>{{error_msg}}</h4>
         {{/has_error}}
         {{^has_error}}
-            <h4 style="color:green">Success</h4>
+            <h4 >Success</h4>
             <h4>
                 Your tx should be already in the txpool waiting to be included
                 in an upcoming block.

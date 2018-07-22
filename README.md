@@ -4,6 +4,8 @@
 Currently Monero Ecosystem is not Forks Friendly. I might to change it being
 user oriented and firstly user are developer. My improvement to original @moneroexamples/onion-monero-blockchain-explorer is to add simple Flask server w/o need to rebuild whole app any time you want to change design.
 
+![Explorer Screenshot](./screenshot.png)
+
 ## Found Template Variables (W.I.P)
 
 - server_timestamp (datetime)

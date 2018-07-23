@@ -6,11 +6,17 @@
         </div>
     </div>
 </div>
+<div class="fixed-action-btn">
+  <a href="/" class="btn-floating btn-large teal lighten-2">
+    <i class="large material-icons">home</i>
+  </a>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 M.Tooltip.init(document.querySelectorAll("[data-tooltip]"), {})
-});
+})
+M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn"))
 </script>
 </body>
 </html>

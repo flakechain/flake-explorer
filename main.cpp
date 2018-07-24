@@ -27,16 +27,6 @@ struct jsonresponse: crow::response
         add_header("Content-Type", "application/json");
     }
 };
-struct textresponse: crow::response
-{
-    textresponse(const string& _body)
-            : crow::response {_body}
-    {
-        add_header("Access-Control-Allow-Origin", "*");
-        add_header("Access-Control-Allow-Headers", "Content-Type");
-        add_header("Content-Type", "text/plain");
-    }
-};
 }
 
 int
@@ -685,8 +675,7 @@ main(int ac, const char* av[])
 
         CROW_ROUTE(app, "/api/total")
         ([&](const crow::request& req) {
-            myxmr::textresponse r(xmrblocks.total());
-            return r;
+            return xmrblocks.total();
         });
 
         CROW_ROUTE(app, "/api/outputs").methods("GET"_method)

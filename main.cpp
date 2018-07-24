@@ -675,7 +675,7 @@ main(int ac, const char* av[])
 
         CROW_ROUTE(app, "/api/total")
         ([&](const crow::request& req) {
-            return xmrblocks.total();
+            return crow::response(xmrblocks.total());
         });
 
         CROW_ROUTE(app, "/api/outputs").methods("GET"_method)

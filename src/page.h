@@ -5195,7 +5195,7 @@ public:
         return j_response;
     }
 
-    const & string
+    const string &
     total()
     {
     	if (!CurrentBlockchainStatus::is_thread_running())

@@ -5195,28 +5195,19 @@ public:
         return j_response;
     }
 
-    json
-    json_total()
+    const & string
+    total()
     {
-    	json j_response {
-    		{"data", json {}}
-    	};
-    	json & j_data = j_response["data"];
     	if (!CurrentBlockchainStatus::is_thread_running())
         {
-            j_data["title"] = "Emission monitoring thread not enabled.";
-            return j_response;
+            return string("Emission monitoring thread not enabled.");
         }
         else
         {
             CurrentBlockchainStatus::Emission current_values
                     = CurrentBlockchainStatus::get_emission();
 
-            j_data = json {
-                    {"total"     , xmr_amount_to_str(current_values.fee + current_values.coinbase)},
-            };
-        };
-    	return j_response;
+            return string(xmr_amount_to_str(current_values.fee + current_values.coinbase));
     }
 
     /*

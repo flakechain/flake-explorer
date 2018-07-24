@@ -29,7 +29,7 @@ struct jsonresponse: crow::response
 };
 struct textresponse: crow::response
 {
-    jsonresponse(const std::string& _body)
+    textresponse(const std::string& _body)
             : crow::response {_body}
     {
         add_header("Access-Control-Allow-Origin", "*");
@@ -686,7 +686,7 @@ main(int ac, const char* av[])
         CROW_ROUTE(app, "/api/total")
         ([&](const crow::request &req) {
 
-            std::string r(xmrblocks.total());
+            myxmr::textresponse r(xmrblocks.total());
             return r;
         });
 

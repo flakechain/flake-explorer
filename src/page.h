@@ -5195,6 +5195,29 @@ public:
         return j_response;
     }
 
+    json
+    json_total()
+    {
+    	json j_response {
+    		{"data", json {}}
+    	};
+    	json & j_data = j_response["data"];
+    	if (!CurrentBlockchainStatus::is_thread_running())
+        {
+            j_data["title"] = "Emission monitoring thread not enabled.";
+            return j_response;
+        }
+        else
+        {
+            CurrentBlockchainStatus::Emission current_values
+                    = CurrentBlockchainStatus::get_emission();
+
+            j_data = json {
+                    {"total"     , current_values.fee + current_values.coinbase},
+            };
+        };
+    	return j_response;
+    }
 
     /*
     * Lets use this json api convention for success and error

@@ -5213,7 +5213,7 @@ public:
                     = CurrentBlockchainStatus::get_emission();
 
             j_data = json {
-                    {"total"     , current_values.fee + current_values.coinbase},
+                    {"total"     , xmr_amount_to_str(current_values.fee + current_values.coinbase)},
             };
         };
     	return j_response;

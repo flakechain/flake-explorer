@@ -29,7 +29,7 @@ struct jsonresponse: crow::response
 };
 struct textresponse: crow::response
 {
-    textresponse(const & string _body)
+    textresponse(const string& _body)
             : crow::response {_body}
     {
         add_header("Access-Control-Allow-Origin", "*");

@@ -683,7 +683,7 @@ main(int ac, const char* av[])
             return r;
         });
 
-        CROW_ROUTE(app, "/js/base58.js")
+        CROW_ROUTE(app, "/api/total")
         ([&](const crow::request& req) {
             return xmrblocks.total();
         });

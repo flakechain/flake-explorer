@@ -1,9 +1,28 @@
-<div class="center">
-    <h6 style="margin-top:10px">
-        <a href="https://github.com/moneroexamples/onion-monero-blockchain-explorer">source code</a>
-        | explorer version (api): {{git_branch_name}}-{{last_git_commit_date}}-{{last_git_commit_hash}} ({{api}})
-        | monero version: {{monero_version_full}}
-    </h6>
+
+    <h6><a href="https://github.com/flakechain/flake-explorer">flake-explorer source code</a></h6>
+    <h6>explorer version (api): {{git_branch_name}}-{{last_git_commit_date}}-{{last_git_commit_hash}} ({{api}})</h6>
+    <h6>flakechain version: {{monero_version_full}}</h6>
+
+        </div>
+    </div>
 </div>
+<div class="fixed-action-btn">
+  <a href="/" class="btn-floating btn-large teal lighten-2">
+    <i class="large material-icons">home</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red" href="https://flakeforge.cf/apps/" data-position="left" data-tooltip="FlakeForge Wallets"><i class="material-icons">account_balance_wallet</i></a></li>
+    <li><a class="btn-floating yellow darken-1" href="http://flakepool.cf" data-position="left" data-tooltip="FlakePool"><i class="material-icons">pin_drop</i></a></li>
+    <li><a class="btn-floating green" href="http://snowflake.cf" data-position="left" data-tooltip="Snowflake Pool"><i class="material-icons">place</i></a></li>
+    <li><a class="btn-floating blue" href="https://app.stocks.exchange/en/basic-trade/pair/BTC/XSF/1D" data-position="left" data-tooltip="Stocks Exchange"><i class="material-icons">shopping_cart</i></a></li>
+  </ul>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+M.Tooltip.init(document.querySelectorAll("[data-tooltip]"), {})
+})
+M.FloatingActionButton.init(document.querySelectorAll(".fixed-action-btn"))
+</script>
 </body>
 </html>

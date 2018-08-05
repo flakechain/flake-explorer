@@ -689,6 +689,16 @@ main(int ac, const char* av[])
             return r;
         });
 
+        CROW_ROUTE(app, "/api/circulating")
+        ([&](const crow::request& req) {
+            return crow::response(xmrblocks.total());
+        });
+
+        CROW_ROUTE(app, "/api/total")
+        ([&](const crow::request& req) {
+            return crow::response("10000000.00");
+        });
+
         CROW_ROUTE(app, "/api/outputs").methods("GET"_method)
         ([&](const crow::request &req) {
 

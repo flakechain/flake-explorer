@@ -461,7 +461,7 @@ public:
 
         template_file["css_styles"]      = xmreg::read(TMPL_CSS_STYLES);
         template_file["header"]          = xmreg::read(TMPL_HEADER);
-        template_file["footer"]          = get_footer();
+        template_file["footer"]          =  get_footer();
         template_file["index2"]          = get_full_page(xmreg::read(TMPL_INDEX2));
         template_file["mempool"]         = xmreg::read(TMPL_MEMPOOL);
         template_file["altblocks"]       = get_full_page(xmreg::read(TMPL_ALTBLOCKS));
@@ -5365,6 +5365,21 @@ public:
         return j_response;
     }
 
+    const string
+    total()
+    {
+    	if (!CurrentBlockchainStatus::is_thread_running())
+        {
+            return string("Emission monitoring thread not enabled.");
+        }
+        else
+        {
+            CurrentBlockchainStatus::Emission current_values
+                    = CurrentBlockchainStatus::get_emission();
+
+            return string(xmr_amount_to_str(current_values.fee + current_values.coinbase));
+        }
+    }
 
     /*
     * Lets use this json api convention for success and error

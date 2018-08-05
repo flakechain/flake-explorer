@@ -8,7 +8,7 @@
     <div class="center">
 
         {{#has_error}}
-            <h4 style="color:red">Checking tx failed</h4>
+            <h4 >Checking tx failed</h4>
             <h4>{{error_msg}}</h4>
         {{/has_error}}
         {{^has_error}}
@@ -19,7 +19,7 @@
             <h3>Details of unsigned raw tx data given</h3>
 
             {{#txs}}
-                <div class="center" style="width: 100%; margin-top:10px">
+                <div class="center" >
                     <h4>Basic information</h4>
                     <h5>
                         {{#dest_infos}}
@@ -42,7 +42,7 @@
                     <div class="center">
                         <ul class="center">
                             {{#timescales}}
-                            <li  style="list-style-type: none; text-align: center; font-size: 8px">|{{timescale}}|</li>
+                            <li  >|{{timescale}}|</li>
                             {{/timescales}}
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
 
                     <h4>Outputs selected for this tx (total: {{sum_outputs_amounts}})</h4>
                     {{#dest_sources}}
-                                <table style="width: 100%; margin-top:10px">
+                                <table >
                                     <tr>
                                         <td>Output Index</td>
                                         <td>Stealth address</td>
@@ -63,7 +63,7 @@
                                             <td>{{out_index}}</td>
                                             <td><a href="/tx/{{tx_hash}}">{{out_pub_key}}</a></td>
                                             {{#is_real}}
-                                                <td><span style="color: #008009;font-weight: bold">{{is_real}}</span></td>
+                                                <td><span >{{is_real}}</span></td>
                                             {{/is_real}}
                                             {{^is_real}}
                                                 <td>{{is_real}}</td>
@@ -98,7 +98,7 @@
                     <br/>
                     <h3>JSON representation of tx</h3>
                     <div class="center">
-                        <code style="white-space: pre-wrap; font-size: 10px">
+                        <code >
                             {{tx_json}}
                         </code>
                     </div>

@@ -542,13 +542,14 @@
         <input type="checkbox" id="toggle-1">
         <div id="decoded-inputs">
             <div class="center">
-                <code style="white-space: pre-wrap; font-size: 10px">
+                <blockquote style="text-align: left; white-space: pre-wrap; font-size: 16px">
                     {{tx_json}}
-                </code>
+                </blockquote>
             </div>
         </div>
-        <br/><br/>
-        <h5 style="margin-top:1px"><a href="/tx/{{tx_hash}}">Less details</a></h5>
+        <a class="waves-effect waves-light btn" href="/tx/{{tx_hash}}">
+            Less details
+        </a>
     {{/with_ring_signatures}}
 {{/have_raw_tx}}
 
